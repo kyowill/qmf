@@ -31,7 +31,7 @@ bool DatasetReader::readOne(DatasetElem& elem) {
     return false;
   }
   int32_t value = 0;
-  const int result = sscanf(line_.c_str(), "%ld %ld %d", &elem.userId,
+  const int result = sscanf(line_.c_str(), "%ld,%ld,%d", &elem.userId,
       &elem.itemId, &value);
   CHECK_EQ(result, 3) << "the file format is incorrect: " << line_;
   elem.value = static_cast<Double>(value);

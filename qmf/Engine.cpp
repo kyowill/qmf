@@ -112,10 +112,10 @@ void Engine::saveFactors(const FactorData& factorData,
     const int64_t id = index.id(idx);
     out << id;
     if (factorData.withBiases()) {
-      out << ' ' << factorData.biasAt(idx);
+      out << ',' << factorData.biasAt(idx);
     }
     for (size_t fidx = 0; fidx < factorData.nfactors(); ++fidx) {
-      out << ' ' << factorData.at(idx, fidx);
+      out << ',' << factorData.at(idx, fidx);
     }
     out << '\n';
   }
